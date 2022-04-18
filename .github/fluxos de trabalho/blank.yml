@@ -1,0 +1,58 @@
+package AutomacaoTeste;
+
+import static org.junit.Assert.fail;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Entrevista {
+
+	WebDriver driver;
+	
+	
+	
+	@Before
+	public void setUp() throws Exception {
+		
+		System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
+		
+		driver = new ChromeDriver();
+		
+		driver.get("https://blogdoagi.com.br/");
+		
+		driver.manage().window().maximize();
+		
+		
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		
+		//driver.quit();
+	}
+
+	@Test
+	public void testSUASFINANCAS() {
+		
+		driver.findElement(By.cssSelector("#menu-item-569 > a")).click();
+		
+		driver.findElement(By.cssSelector("#post-2315 > div.meta-main-wrap > div.entry-main > header > h2 > a")).click();
+		
+		
+	}
+	
+	@Test
+	public void testSEUSINVESTIMENTOS() {
+		
+		driver.findElement(By.cssSelector("#menu-item-570 > a")).click();
+		driver.findElement(By.cssSelector("#post-1744 > div.meta-main-wrap > div.entry-main > header > h2 > a")).click();
+	
+		
+		
+	}
+	}
+
